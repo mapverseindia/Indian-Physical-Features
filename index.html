@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- ================= BASIC ================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MapVerse India | Physical Features of India</title>
+
+  <!-- ================= SEO ================= -->
+  <meta name="description" content="Explore India's physical features with interactive maps, 3D models, and educational content. A Class 9 Geography project by Zaeem Bhat." />
+  <meta name="keywords" content="India geography, physical features of India, Himalayas, rivers, plateau, maps, geography project" />
+  <meta name="author" content="Zaeem Bhat" />
+
+  <!-- ================= FAVICON ================= -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- ================= FONTS ================= -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- ================= PRELOAD ================= -->
+  <link rel="preload" href="/src/index.css" as="style">
+  <link rel="preload" href="/src/main.jsx" as="script">
+
+  <!-- ================= THEME COLOR ================= -->
+  <meta name="theme-color" content="#06b6d4">
+
+  <!-- ================= OPEN GRAPH ================= -->
+  <meta property="og:title" content="MapVerse India" />
+  <meta property="og:description" content="Explore India's geography with maps and 3D models." />
+  <meta property="og:type" content="website" />
+
+  <!-- ================= TWITTER ================= -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ================= STYLES ================= -->
+  <style>
+    /* ===== LOADING FALLBACK ===== */
+    body {
+      margin: 0;
+      background: #060b14;
+      color: white;
+      font-family: Inter, sans-serif;
+    }
+
+    #initial-loader {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #060b14;
+      z-index: 9999;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid transparent;
+      border-top-color: #06b6d4;
+      border-right-color: #3b82f6;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ================= ROOT APP ================= -->
+  <div id="root"></div>
+
+  <!-- ================= FALLBACK LOADER ================= -->
+  <div id="initial-loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- ================= NOSCRIPT ================= -->
+  <noscript>
+    <div style="padding:20px;text-align:center;">
+      This app requires JavaScript to run.
+    </div>
+  </noscript>
+
+  <!-- ================= MAIN SCRIPT ================= -->
+  <script type="module" src="/src/main.jsx"></script>
+
+  <!-- ================= CLEANUP SCRIPT ================= -->
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("initial-loader");
+      if (loader) loader.style.display = "none";
+    });
+  </script>
+
+  <!-- ================= PERFORMANCE ================= -->
+  <script>
+    // Simple FPS monitor (optional advanced feature)
+    let lastTime = performance.now();
+    function fpsMonitor() {
+      const now = performance.now();
+      const fps = 1000 / (now - lastTime);
+      lastTime = now;
+      requestAnimationFrame(fpsMonitor);
+    }
+    requestAnimationFrame(fpsMonitor);
+  </script>
+
+  <!-- ================= SCROLL RESTORE ================= -->
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  </script>
+
+  <!-- ================= SECURITY ================= -->
+  <script>
+    // Basic protection (not strong but good)
+    document.addEventListener("contextmenu", e => e.preventDefault());
+  </script>
+
+  <!-- ================= DEBUG ================= -->
+  <script>
+    console.log("MapVerse India Loaded 🚀");
+  </script>
+
+</body>
+</html>
